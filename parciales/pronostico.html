@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <title>QATAR 2022</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-custom navbar-dark">
+      <div class="container-fluid">
+        <img
+          src="../assets/img/onlycup.png"
+          alt="logo de la copa del mundo"
+          class="logonav"
+        />
+        <h2 class="navtitle">FIFA WORLD CUP - QATAR 2022</h2>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse navbar__list"
+          id="navbarNavDropdown"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="../parciales/home.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Noticias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./estadisticas.html">Estadísticas</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Pronóstico
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li>
+                  <a
+                    class="dropdown-item dropfont"
+                    href="../parciales/pronostico.html"
+                    >"EL PRODE"</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item dropfont"
+                    href="../parciales/alternate.html"
+                    >El "Quini6"</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <button
+                class="btn btn-primary botonRepro"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+              >
+                Reproductor
+              </button>
+              <div
+                class="offcanvas offcanvas-end"
+                tabindex="-1"
+                id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel"
+              >
+                <div class="offcanvas-header">
+                  <h5 id="offcanvasRightLabel" class="tituloRepro">
+                    La música de los mundiales!
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close text-reset"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="offcanvas-body">
+                  <p class="textoRepro">
+                    Mientras estás completando tus pronósticos, disfruta de la
+                    música Oficial de los Mundiales pasados, y de QATAR 2022!
+                  </p>
+                  <div id="reproductorBox"></div>
+                  <select
+                    id="selectTrack"
+                    multiple
+                    onchange="cambiarTrack(this.options[this.selectedIndex]);"
+                  >
+                    <option path="../assets/sounds/1990.mp3">
+                      Un'Estate Italiana - Italia 1990
+                    </option>
+                    <option path="../assets/sounds/1998.mp3">
+                      La Copa de la Vida - Francia 1998
+                    </option>
+                    <option path="../assets/sounds/2010.mp3">
+                      Waka Waka - Sudafrica 2010
+                    </option>
+                    <option path="../assets/sounds/2014.mp3">
+                      We are One - Brasil 2014
+                    </option>
+                    <option path="../assets/sounds/2018.mp3">
+                      Live it Up - Rusia 2018
+                    </option>
+                    <option path="../assets/sounds/2022.mp3">
+                      Haya Haya - Better Together - Qatar 2022
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid imginicio"></div>
+    <main class="container-fluid">
+      <div class="row d-flex justify-content-center explicacion">
+        <h1 class="col-md-8 text-center">El pronosticador de QATAR 2022</h1>
+        <p class="text-center">
+          En esta modalidad del pronosticador, podrás predecir cada uno de los
+          64 partidos de la copa del mundo. Es decir, podrás ir por cada partido
+          de la fase de grupos y pronosticar cada resultado, y después realizar
+          lo mismo con los partidos de octavos, cuartos, semi, partido del
+          tercer puesto y la GRAN FINAL! <br />
+          Si querés un reto un poco menor, y solo querés divertirte, podés hacer
+          click <a href="../parciales/alternate.html">ACA</a> y probar nuestro
+          "Quini6" del Mundial.
+        </p>
+      </div>
+    </main>
+    <div class="accordion colapsa" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            <span class="tituloGrupo"
+              >GRUPO A - QATAR / ECUADOR / SENEGAL / PAISES BAJOS</span
+            >
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <section class="row grupo__fila">
+              <div class="col-md-6 grupo">
+                <p id="pais1">Qatar</p>
+                <input
+                  type="number"
+                  id="g1"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g2"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais2">Ecuador</p>
+                <p id="pais3">Senegal</p>
+                <input
+                  type="number"
+                  id="g3"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g4"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais4">Paises Bajos</p>
+                <p id="pais5">Qatar</p>
+                <input
+                  type="number"
+                  id="g5"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g6"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais6">Senegal</p>
+                <p id="pais7">Ecuador</p>
+                <input
+                  type="number"
+                  id="g7"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g8"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais8">Paises Bajos</p>
+                <p id="pais9">Qatar</p>
+                <input
+                  type="number"
+                  id="g9"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g10"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais10">Paises Bajos</p>
+                <p id="pais11">Ecuador</p>
+                <input
+                  type="number"
+                  id="g11"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g12"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais12">Senegal</p>
+              </div>
+              <div class="col-md-6 orden">
+                <p id="cabeza1">Pais</p>
+                <p id="pts">Puntos</p>
+                <p id="gfs">Goles a Favor</p>
+                <p id="gcs">Goles en Contra</p>
+                <p id="df">Dif. Gol</p>
+                <p id="clasi1">Qatar</p>
+                <p id="pts1">0</p>
+                <p id="gf1">0</p>
+                <p id="gc1">0</p>
+                <p id="df1">0</p>
+                <p id="clasi2">Ecuador</p>
+                <p id="pts2">0</p>
+                <p id="gf2">0</p>
+                <p id="gc2">0</p>
+                <p id="df2">0</p>
+                <p id="ter">Senegal</p>
+                <p id="pts3">0</p>
+                <p id="gf3">0</p>
+                <p id="gc3">0</p>
+                <p id="df3">0</p>
+                <p id="cuar">Paises Bajos</p>
+                <p id="pts4">0</p>
+                <p id="gf4">0</p>
+                <p id="gc4">0</p>
+                <p id="df4">0</p>
+              </div>
+            </section>
+            <div class="row d-flex justify-content-center btnCtn">
+              <div class="col-md-2">
+                <button type="button" id="cargaData" class="btnGrupo">
+                  Carga los resultados
+                </button>
+              </div>
+              <div class="col-md-2">
+                <button type="button" id="borrarData" class="btnGrupo">
+                  Borra los resultados
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            <span class="tituloGrupo"
+              >GRUPO B - INGLATERRA / IRAN / ESTADOS UNIDOS / ESCOCIA</span
+            >
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <section class="row grupoB__fila">
+              <div class="col-md-6 grupoB">
+                <p id="pais13">Inglaterra</p>
+                <input
+                  type="number"
+                  id="g13"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g14"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais14">Iran</p>
+                <p id="pais15">Estados Unidos</p>
+                <input
+                  type="number"
+                  id="g15"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g16"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais16">Escocia</p>
+                <p id="pais17">Inglaterra</p>
+                <input
+                  type="number"
+                  id="g17"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g18"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais18">Estados Unidos</p>
+                <p id="pais19">Iran</p>
+                <input
+                  type="number"
+                  id="g19"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g20"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais20">Escocia</p>
+                <p id="pais21">Inglaterra</p>
+                <input
+                  type="number"
+                  id="g21"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g22"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais22">Escocia</p>
+                <p id="pais23">Iran</p>
+                <input
+                  type="number"
+                  id="g23"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g24"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais24">Estados Unidos</p>
+              </div>
+              <div class="col-md-6 ordenB">
+                <p id="cabezaB">Pais</p>
+                <p id="ptsB">Puntos</p>
+                <p id="gfsB">Goles a Favor</p>
+                <p id="gcsB">Goles en Contra</p>
+                <p id="dfB">Dif. Gol</p>
+                <p id="clasi1B">Inglaterra</p>
+                <p id="pts1B">0</p>
+                <p id="gf1B">0</p>
+                <p id="gc1B">0</p>
+                <p id="df1B">0</p>
+                <p id="clasi2B">Iran</p>
+                <p id="pts2B">0</p>
+                <p id="gf2B">0</p>
+                <p id="gc2B">0</p>
+                <p id="df2B">0</p>
+                <p id="terB">Estados Unidos</p>
+                <p id="pts3B">0</p>
+                <p id="gf3B">0</p>
+                <p id="gc3B">0</p>
+                <p id="df3B">0</p>
+                <p id="cuarB">Escocia</p>
+                <p id="pts4B">0</p>
+                <p id="gf4B">0</p>
+                <p id="gc4B">0</p>
+                <p id="df4B">0</p>
+              </div>
+            </section>
+            <div class="row d-flex justify-content-center btnCtn">
+              <div class="col-md-2">
+                <button type="button" id="cargaDataB" class="btnGrupo">
+                  Carga los resultados
+                </button>
+              </div>
+              <div class="col-md-2">
+                <button type="button" id="borrarDataB" class="btnGrupo">
+                  Borra los resultados
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            <span class="tituloGrupo"
+              >GRUPO C - ARGENTINA / ARABIA SAUDITA / MEXICO / POLONIA</span
+            >
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <section class="row grupoB__fila">
+              <div class="col-md-6 grupoC">
+                <p id="pais25">Argentina</p>
+                <input
+                  type="number"
+                  id="g25"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g26"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais26">Arabia Saudita</p>
+                <p id="pais27">Mexico</p>
+                <input
+                  type="number"
+                  id="g27"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g28"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais28">Polonia</p>
+                <p id="pais29">Argentina</p>
+                <input
+                  type="number"
+                  id="g29"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g30"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais30">Mexico</p>
+                <p id="pais31">Arabia Saudita</p>
+                <input
+                  type="number"
+                  id="g31"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g32"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais32">Polonia</p>
+                <p id="pais33">Argentina</p>
+                <input
+                  type="number"
+                  id="g33"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g34"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais34">Polonia</p>
+                <p id="pais35">Arabia Saudita</p>
+                <input
+                  type="number"
+                  id="g35"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g36"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais36">Mexico</p>
+              </div>
+              <div class="col-md-6 ordenC">
+                <p id="cabezaC">Pais</p>
+                <p id="ptsC">Puntos</p>
+                <p id="gfsC">Goles a Favor</p>
+                <p id="gcsC">Goles en Contra</p>
+                <p id="dfC">Dif. Gol</p>
+                <p id="clasi1C">Argentina</p>
+                <p id="pts1C">0</p>
+                <p id="gf1C">0</p>
+                <p id="gc1C">0</p>
+                <p id="df1C">0</p>
+                <p id="clasi2C">Arabia Saudita</p>
+                <p id="pts2C">0</p>
+                <p id="gf2C">0</p>
+                <p id="gc2C">0</p>
+                <p id="df2C">0</p>
+                <p id="terC">Mexico</p>
+                <p id="pts3C">0</p>
+                <p id="gf3C">0</p>
+                <p id="gc3C">0</p>
+                <p id="df3C">0</p>
+                <p id="cuarC">Polonia</p>
+                <p id="pts4C">0</p>
+                <p id="gf4C">0</p>
+                <p id="gc4C">0</p>
+                <p id="df4C">0</p>
+              </div>
+            </section>
+            <div class="row d-flex justify-content-center btnCtn">
+              <div class="col-md-2">
+                <button type="button" id="cargaDataC" class="btnGrupo">
+                  Carga los resultados
+                </button>
+              </div>
+              <div class="col-md-2">
+                <button type="button" id="borrarDataC" class="btnGrupo">
+                  Borra los resultados
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseFour"
+            aria-expanded="false"
+            aria-controls="collapseFour"
+          >
+            <span class="tituloGrupo"
+              >GRUPO D - FRANCIA / PERU / DINAMARCA / TUNEZ</span
+            >
+          </button>
+        </h2>
+        <div
+          id="collapseFour"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingFour"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <section class="row grupoB__fila">
+              <div class="col-md-6 grupoD">
+                <p id="pais37">Francia</p>
+                <input
+                  type="number"
+                  id="g37"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g38"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais38">Peru</p>
+                <p id="pais39">Dinamarca</p>
+                <input
+                  type="number"
+                  id="g39"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g40"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais40">Tunez</p>
+                <p id="pais41">Francia</p>
+                <input
+                  type="number"
+                  id="g41"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g42"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais42">Dinamarca</p>
+                <p id="pais43">Peru</p>
+                <input
+                  type="number"
+                  id="g43"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g44"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais44">Tunez</p>
+                <p id="pais45">Francia</p>
+                <input
+                  type="number"
+                  id="g45"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g46"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais46">Tunez</p>
+                <p id="pais47">Peru</p>
+                <input
+                  type="number"
+                  id="g47"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <input
+                  type="number"
+                  id="g48"
+                  class="indicador"
+                  min="0"
+                  max="99"
+                  value=""
+                />
+                <p id="pais48">Dinamarca</p>
+              </div>
+              <div class="col-md-6 ordenD">
+                <p id="cabezaD">Pais</p>
+                <p id="ptsD">Puntos</p>
+                <p id="gfsD">Goles a Favor</p>
+                <p id="gcsD">Goles en Contra</p>
+                <p id="dfD">Dif. Gol</p>
+                <p id="clasi1D">Francia</p>
+                <p id="pts1D">0</p>
+                <p id="gf1D">0</p>
+                <p id="gc1D">0</p>
+                <p id="df1D">0</p>
+                <p id="clasi2D">Peru</p>
+                <p id="pts2D">0</p>
+                <p id="gf2D">0</p>
+                <p id="gc2D">0</p>
+                <p id="df2D">0</p>
+                <p id="terD">Dinamarca</p>
+                <p id="pts3D">0</p>
+                <p id="gf3D">0</p>
+                <p id="gc3D">0</p>
+                <p id="df3D">0</p>
+                <p id="cuarD">Tunez</p>
+                <p id="pts4D">0</p>
+                <p id="gf4D">0</p>
+                <p id="gc4D">0</p>
+                <p id="df4D">0</p>
+              </div>
+            </section>
+            <div class="row d-flex justify-content-center btnCtn">
+              <div class="col-md-2">
+                <button type="button" id="cargaDataD" class="btnGrupo">
+                  Carga los resultados
+                </button>
+              </div>
+              <div class="col-md-2">
+                <button type="button" id="borrarDataD" class="btnGrupo">
+                  Borra los resultados
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseFive"
+            aria-expanded="false"
+            aria-controls="collapseFive"
+          >
+            <span class="tituloGrupo"
+              >GRUPO E - ESPAÑA / COSTA RICA / ALEMANIA / JAPON</span
+            >
+          </button>
+        </h2>
+        <div
+          id="collapseFive"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingFive"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <section class="row grupoB__fila">
+              <div class="col-md-6 grupoE">
+                <p id="pais49">España</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g49"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g50"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais50">Costa Rica</p>
+                <p id="pais51">Alemania</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g51"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g52"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais52">Japon</p>
+                <p id="pais53">España</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g53"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g54"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais54">Alemania</p>
+                <p id="pais55">Costa Rica</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g55"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g56"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais56">Japon</p>
+                <p id="pais57">España</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g57"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g58"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais58">Japon</p>
+                <p id="pais59">Costa Rica</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g59"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g60"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais60">Alemania</p>
+              </div>
+              <div class="col-md-6 ordenE">
+                <p id="cabezaE">Pais</p>
+                <p id="ptsE">Puntos</p>
+                <p id="gfsE">Goles a Favor</p>
+                <p id="gcsE">Goles en Contra</p>
+                <p id="dfE">Dif. Gol</p>
+                <p id="clasi1E">España</p>
+                <p id="pts1E">0</p>
+                <p id="gf1E">0</p>
+                <p id="gc1E">0</p>
+                <p id="df1E">0</p>
+                <p id="clasi2E">Costa Rica</p>
+                <p id="pts2E">0</p>
+                <p id="gf2E">0</p>
+                <p id="gc2E">0</p>
+                <p id="df2E">0</p>
+                <p id="terE">Alemania</p>
+                <p id="pts3E">0</p>
+                <p id="gf3E">0</p>
+                <p id="gc3E">0</p>
+                <p id="df3E">0</p>
+                <p id="cuarE">Japon</p>
+                <p id="pts4E">0</p>
+                <p id="gf4E">0</p>
+                <p id="gc4E">0</p>
+                <p id="df4E">0</p>
+              </div>
+            </section>
+            <div class="row d-flex justify-content-center btnCtn">
+              <div class="col-md-2">
+                <button type="button" id="cargaDataE" class="btnGrupo">
+                  Carga los resultados
+                </button>
+              </div>
+              <div class="col-md-2">
+                <button type="button" id="borrarDataE" class="btnGrupo">
+                  Borra los resultados
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSix">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseSix"
+            aria-expanded="false"
+            aria-controls="collapseSix"
+          >
+            <span class="tituloGrupo"
+              >GRUPO F - BELGICA / CANADA / MARRUECOS / CROACIA</span
+            >
+          </button>
+        </h2>
+        <div
+          id="collapseSix"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingSix"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <section class="row grupoB__fila">
+              <div class="col-md-6 grupoF">
+                <p id="pais61">Belgica</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g61"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g62"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais62">Canada</p>
+                <p id="pais63">Marruecos</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g63"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g64"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais64">Croacia</p>
+                <p id="pais65">Belgica</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g65"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g66"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais66">Marruecos</p>
+                <p id="pais67">Canada</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g67"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g68"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais68">Croacia</p>
+                <p id="pais69">Belgica</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g69"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g70"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais70">Croacia</p>
+                <p id="pais71">Canada</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g71"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g72"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais72">Marruecos</p>
+              </div>
+              <div class="col-md-6 ordenF">
+                <p id="cabezaF">Pais</p>
+                <p id="ptsF">Puntos</p>
+                <p id="gfsF">Goles a Favor</p>
+                <p id="gcsF">Goles en Contra</p>
+                <p id="dfF">Dif. Gol</p>
+                <p id="clasi1F">Belgica</p>
+                <p id="pts1F">0</p>
+                <p id="gf1F">0</p>
+                <p id="gc1F">0</p>
+                <p id="df1F">0</p>
+                <p id="clasi2F">Canada</p>
+                <p id="pts2F">0</p>
+                <p id="gf2F">0</p>
+                <p id="gc2F">0</p>
+                <p id="df2F">0</p>
+                <p id="terF">Marruecos</p>
+                <p id="pts3F">0</p>
+                <p id="gf3F">0</p>
+                <p id="gc3F">0</p>
+                <p id="df3F">0</p>
+                <p id="cuarF">Croacia</p>
+                <p id="pts4F">0</p>
+                <p id="gf4F">0</p>
+                <p id="gc4F">0</p>
+                <p id="df4F">0</p>
+              </div>
+            </section>
+            <div class="row d-flex justify-content-center btnCtn">
+              <div class="col-md-2">
+                <button type="button" id="cargaDataF" class="btnGrupo">
+                  Carga los resultados
+                </button>
+              </div>
+              <div class="col-md-2">
+                <button type="button" id="borrarDataF" class="btnGrupo">
+                  Borra los resultados
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSeven">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseSeven"
+            aria-expanded="false"
+            aria-controls="collapseSeven"
+          >
+            <span class="tituloGrupo"
+              >GRUPO G - BRASIL / SERBIA / SUIZA / CAMERUN</span
+            >
+          </button>
+        </h2>
+        <div
+          id="collapseSeven"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingSeven"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <section class="row grupoB__fila">
+              <div class="col-md-6 grupoG">
+                <p id="pais73">Brasil</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g73"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g74"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais74">Serbia</p>
+                <p id="pais75">Suiza</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g75"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g76"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais76">Camerun</p>
+                <p id="pais77">Brasil</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g77"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g78"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais78">Suiza</p>
+                <p id="pais79">Serbia</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g79"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g80"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais80">Camerun</p>
+                <p id="pais81">Brasil</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g81"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g82"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais82">Camerun</p>
+                <p id="pais83">Serbia</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g83"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g84"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais84">Suiza</p>
+              </div>
+              <div class="col-md-6 ordenG">
+                <p id="cabezaG">Pais</p>
+                <p id="ptsG">Puntos</p>
+                <p id="gfsG">Goles a Favor</p>
+                <p id="gcsG">Goles en Contra</p>
+                <p id="dfG">Dif. Gol</p>
+                <p id="clasi1G">Brasil</p>
+                <p id="pts1G">0</p>
+                <p id="gf1G">0</p>
+                <p id="gc1G">0</p>
+                <p id="df1G">0</p>
+                <p id="clasi2G">Serbia</p>
+                <p id="pts2G">0</p>
+                <p id="gf2G">0</p>
+                <p id="gc2G">0</p>
+                <p id="df2G">0</p>
+                <p id="terG">Suiza</p>
+                <p id="pts3G">0</p>
+                <p id="gf3G">0</p>
+                <p id="gc3G">0</p>
+                <p id="df3G">0</p>
+                <p id="cuarG">Camerun</p>
+                <p id="pts4G">0</p>
+                <p id="gf4G">0</p>
+                <p id="gc4G">0</p>
+                <p id="df4G">0</p>
+              </div>
+            </section>
+            <div class="row d-flex justify-content-center btnCtn">
+              <div class="col-md-2">
+                <button type="button" id="cargaDataG" class="btnGrupo">
+                  Carga los resultados
+                </button>
+              </div>
+              <div class="col-md-2">
+                <button type="button" id="borrarDataG" class="btnGrupo">
+                  Borra los resultados
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingEight">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseEight"
+            aria-expanded="false"
+            aria-controls="collapseEight"
+          >
+            <span class="tituloGrupo"
+              >GRUPO H - PORTUGAL / GHANA / URUGUAY / COREA DEL SUR</span
+            >
+          </button>
+        </h2>
+        <div
+          id="collapseEight"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingEight"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <section class="row grupoB__fila">
+              <div class="col-md-6 grupoH">
+                <p id="pais85">Portugal</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g85"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g86"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais86">Ghana</p>
+                <p id="pais87">Uruguay</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g87"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g88"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais88">Corea del Sur</p>
+                <p id="pais89">Portugal</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g89"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g90"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais90">Uruguay</p>
+                <p id="pais91">Ghana</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g91"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g92"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais92">Corea del Sur</p>
+                <p id="pais93">Portugal</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g93"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g94"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais94">Corea del Sur</p>
+                <p id="pais95">Ghana</p>
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g95"
+                  class="indicador"
+                  value=""
+                />
+                <input
+                  type="number"
+                  min="0"
+                  max="99"
+                  id="g96"
+                  class="indicador"
+                  value=""
+                />
+                <p id="pais96">Uruguay</p>
+              </div>
+              <div class="col-md-6 ordenH">
+                <p id="cabezaH">Pais</p>
+                <p id="ptsH">Puntos</p>
+                <p id="gfsH">Goles a Favor</p>
+                <p id="gcsH">Goles en Contra</p>
+                <p id="dfH">Dif. Gol</p>
+                <p id="clasi1H">Portugal</p>
+                <p id="pts1H">0</p>
+                <p id="gf1H">0</p>
+                <p id="gc1H">0</p>
+                <p id="df1H">0</p>
+                <p id="clasi2H">Ghana</p>
+                <p id="pts2H">0</p>
+                <p id="gf2H">0</p>
+                <p id="gc2H">0</p>
+                <p id="df2H">0</p>
+                <p id="terH">Uruguay</p>
+                <p id="pts3H">0</p>
+                <p id="gf3H">0</p>
+                <p id="gc3H">0</p>
+                <p id="df3H">0</p>
+                <p id="cuarH">Corea del Sur</p>
+                <p id="pts4H">0</p>
+                <p id="gf4H">0</p>
+                <p id="gc4H">0</p>
+                <p id="df4H">0</p>
+              </div>
+            </section>
+            <div class="row d-flex justify-content-center btnCtn">
+              <div class="col-md-2">
+                <button type="button" id="cargaDataH" class="btnGrupo">
+                  Carga los resultados
+                </button>
+              </div>
+              <div class="col-md-2">
+                <button type="button" id="borrarDataH" class="btnGrupo">
+                  Borra los resultados
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <article class="container-fluid divisor">
+      <div class="row d-flex justify-content-center">
+        <h1 class="divisor__titulo text-center">Octavos de FINAL!</h1>
+        <p class="divisor__texto text-center">
+          Una vez que cargues los datos de los 8 Grupos, podés pasar a la
+          siguiente fase. Hace click en el siguiente botón para continuar.
+        </p>
+        <div class="row d-flex justify-content-center">
+          <button class="col-md-2 botonCargaData">
+            <a href="./octavos.html" class="linkCargaData">Avanzar a 8vos</a>
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <script src="../js/grupoA.js" type="module"></script>
+    <script src="../js/grupoB.js" type="module"></script>
+    <script src="../js/grupoC.js" type="module"></script>
+    <script src="../js/grupoD.js" type="module"></script>
+    <script src="../js/grupoE.js" type="module"></script>
+    <script src="../js/grupoF.js" type="module"></script>
+    <script src="../js/grupoG.js" type="module"></script>
+    <script src="../js/grupoH.js" type="module"></script>
+    <script src="../js/musica.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

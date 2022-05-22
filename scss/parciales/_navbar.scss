@@ -1,0 +1,81 @@
+@import "./responsive";
+@import "./variables";
+
+.navbar__list {
+  justify-content: end;
+}
+
+.navtitle {
+  font-family: $font-heavy;
+  color: white;
+  font-size: 2rem;
+}
+
+.navbar-custom {
+  background-color: $color-qatar;
+  color: white;
+  font-family: $font-bold;
+  overflow: hidden;
+}
+
+.nav-link {
+  color: white !important;
+
+  &:hover {
+    -webkit-animation: flip-horizontal-bottom 0.4s
+      cubic-bezier(0.455, 0.03, 0.515, 0.955) reverse both;
+    animation: flip-horizontal-bottom 0.4s
+      cubic-bezier(0.455, 0.03, 0.515, 0.955) reverse both;
+
+    @-webkit-keyframes flip-horizontal-bottom {
+      0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+      }
+      100% {
+        -webkit-transform: rotateX(-180deg);
+        transform: rotateX(-180deg);
+      }
+    }
+    @keyframes flip-horizontal-bottom {
+      0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+      }
+      100% {
+        -webkit-transform: rotateX(-180deg);
+        transform: rotateX(-180deg);
+      }
+    }
+  }
+}
+
+.dropfont {
+  font-family: $font-normal !important;
+  color: $color-qatar !important;
+}
+
+.logonav {
+  height: 200px;
+  padding: 25px;
+}
+
+.botonRepro {
+  background-color: white;
+  border: white;
+  color: $color-qatar;
+
+  &:hover {
+    background-color: $color-qatar;
+    border: white;
+    color: white;
+  }
+}
+
+.tituloRepro {
+  color: $color-qatar;
+}
+
+.textoRepro {
+  color: $color-qatar;
+}

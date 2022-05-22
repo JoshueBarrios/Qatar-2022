@@ -1,0 +1,33 @@
+@import "./responsive";
+@import "./variables";
+
+.divisor {
+  color: $color-qatar;
+  font-family: $font-bold;
+
+  &__titulo {
+    font-size: 2.5rem;
+  }
+
+  &__texto {
+    font-size: 1.5rem;
+  }
+}
+
+.rowDeOctavos {
+  color: $color-qatar;
+  font-family: $font-bold;
+}
+
+.bloqueOscuro {
+  background-color: $color-qatar;
+  color: white;
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+.escudoSemi {
+  height: 20vh;
+}

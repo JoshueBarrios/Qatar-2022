@@ -1,0 +1,442 @@
+@import "./responsive";
+@import "./variables";
+
+.imginicio {
+  background-image: url("../assets/img/pronosticador.jpg");
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  height: 60vh;
+}
+
+.explicacion {
+  font-family: $font-heavy;
+  color: $color-qatar;
+  padding: 15px;
+}
+
+.tituloGrupo {
+  font-family: $font-bold;
+  color: $color-qatar;
+}
+
+.grupo {
+  display: grid;
+  grid-template-areas:
+    "pais1 g1 g2 pais2"
+    "pais3 g3 g4 pais4"
+    "pais5 g5 g6 pais6"
+    "pais7 g7 g8 pais8"
+    "pais9 g9 g10 pais10"
+    "pais11 g11 g12 pais12";
+  grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+
+  &__fila {
+    background-color: $color-qatar;
+    font-family: $font-normal;
+    color: white;
+  }
+}
+
+.indicador {
+  width: 30px;
+  height: 30px;
+}
+
+.orden {
+  display: grid;
+  grid-template-areas:
+    "cabeza1 pts gfs gcs df"
+    "clasi1 pts1 gf1 gc1 df1"
+    "clasi2 pts2 gf2 gc2 df2"
+    "ter pts3 gf3 gc3 df3"
+    "cuar pts4 gf4 gc4 df4";
+  grid-template-columns: 1fr repeat(4, 0.5fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.btnCtn {
+  background-color: $color-qatar;
+}
+
+.btnGrupo {
+  background-color: white;
+  font-family: $font-bold;
+  color: $color-qatar;
+  font-size: 1rem;
+  padding: 5px;
+  margin-top: 20px;
+  width: 30vh;
+  height: 7vh;
+}
+
+.grupoB {
+  display: grid;
+  grid-template-areas:
+    "pais13 g13 g14 pais14"
+    "pais15 g15 g16 pais16"
+    "pais17 g17 g18 pais18"
+    "pais19 g19 g20 pais20"
+    "pais21 g21 g22 pais22"
+    "pais23 g23 g24 pais24";
+  grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+
+  &__fila {
+    background-color: $color-qatar;
+    font-family: $font-normal;
+    color: white;
+  }
+}
+
+.ordenB {
+  display: grid;
+  grid-template-areas:
+    "cabezaB ptsB gfsB gcsB dfB"
+    "clasi1B pts1B gf1B gc1B df1B"
+    "clasi2B pts2B gf2B gc2B df2B"
+    "terB pts3B gf3B gc3B df3B"
+    "cuarB pts4B gf4B gc4B df4B";
+  grid-template-columns: 1fr repeat(4, 0.5fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.grupoC {
+  display: grid;
+  grid-template-areas:
+    "pais13 g13 g14 pais14"
+    "pais15 g15 g16 pais16"
+    "pais17 g17 g18 pais18"
+    "pais19 g19 g20 pais20"
+    "pais21 g21 g22 pais22"
+    "pais23 g23 g24 pais24";
+  grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+
+  &__fila {
+    background-color: $color-qatar;
+    font-family: $font-normal;
+    color: white;
+  }
+}
+
+.ordenC {
+  display: grid;
+  grid-template-areas:
+    "cabezaB ptsB gfsB gcsB dfB"
+    "clasi1B pts1B gf1B gc1B df1B"
+    "clasi2B pts2B gf2B gc2B df2B"
+    "terB pts3B gf3B gc3B df3B"
+    "cuarB pts4B gf4B gc4B df4B";
+  grid-template-columns: 1fr repeat(4, 0.5fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.grupoD {
+  display: grid;
+  grid-template-areas:
+    "pais37 g37 g38 pais38"
+    "pais39 g39 g40 pais40"
+    "pais41 g41 g42 pais42"
+    "pais43 g43 g44 pais44"
+    "pais45 g45 g46 pais46"
+    "pais47 g47 g48 pais48";
+  grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+
+  &__fila {
+    background-color: $color-qatar;
+    font-family: $font-normal;
+    color: white;
+  }
+}
+
+.ordenD {
+  display: grid;
+  grid-template-areas:
+    "cabezaD ptsD gfsD gcsD dfD"
+    "clasi1D pts1D gf1D gc1D df1D"
+    "clasi2D pts2D gf2D gc2D df2D"
+    "terD pts3D gf3D gc3D df3D"
+    "cuarD pts4D gf4D gc4D df4D";
+  grid-template-columns: 1fr repeat(4, 0.5fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.grupoE {
+  display: grid;
+  grid-template-areas:
+    "pais49 g49 g50 pais50"
+    "pais51 g51 g52 pais52"
+    "pais53 g53 g54 pais54"
+    "pais55 g55 g56 pais56"
+    "pais57 g57 g58 pais58"
+    "pais59 g59 g60 pais60";
+  grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+
+  &__fila {
+    background-color: $color-qatar;
+    font-family: $font-normal;
+    color: white;
+  }
+}
+
+.ordenE {
+  display: grid;
+  grid-template-areas:
+    "cabezaE ptsE gfsE gcsE dfE"
+    "clasi1E pts1E gf1E gc1E df1E"
+    "clasi2E pts2E gf2E gc2E df2E"
+    "terE pts3E gf3E gc3E df3E"
+    "cuarE pts4E gf4E gc4E df4E";
+  grid-template-columns: 1fr repeat(4, 0.5fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.grupoF {
+  display: grid;
+  grid-template-areas:
+    "pais61 g61 g62 pais62"
+    "pais63 g63 g64 pais64"
+    "pais65 g65 g66 pais66"
+    "pais67 g67 g68 pais68"
+    "pais69 g69 g70 pais70"
+    "pais71 g71 g72 pais72";
+  grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+
+  &__fila {
+    background-color: $color-qatar;
+    font-family: $font-normal;
+    color: white;
+  }
+}
+
+.ordenF {
+  display: grid;
+  grid-template-areas:
+    "cabezaF ptsF gfsF gcsF dfF"
+    "clasi1F pts1F gf1F gc1F df1F"
+    "clasi2F pts2F gf2F gc2F df2F"
+    "terF pts3F gf3F gc3F df3F"
+    "cuarF pts4F gf4F gc4F df4F";
+  grid-template-columns: 1fr repeat(4, 0.5fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.grupoG {
+  display: grid;
+  grid-template-areas:
+    "pais73 g73 g74 pais74"
+    "pais75 g75 g76 pais76"
+    "pais77 g77 g78 pais78"
+    "pais79 g79 g80 pais80"
+    "pais81 g81 g82 pais82"
+    "pais83 g83 g84 pais84";
+  grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+
+  &__fila {
+    background-color: $color-qatar;
+    font-family: $font-normal;
+    color: white;
+  }
+}
+
+.ordenG {
+  display: grid;
+  grid-template-areas:
+    "cabezaG ptsG gfsG gcsG dfG"
+    "clasi1G pts1G gf1G gc1G df1G"
+    "clasi2G pts2G gf2G gc2G df2G"
+    "terG pts3G gf3G gc3G df3G"
+    "cuarG pts4G gf4G gc4G df4G";
+  grid-template-columns: 1fr repeat(4, 0.5fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.grupoH {
+  display: grid;
+  grid-template-areas:
+    "pais85 g85 g86 pais86"
+    "pais87 g87 g88 pais88"
+    "pais89 g89 g90 pais90"
+    "pais91 g91 g92 pais92"
+    "pais93 g93 g94 pais94"
+    "pais95 g95 g96 pais96";
+  grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+
+  &__fila {
+    background-color: $color-qatar;
+    font-family: $font-normal;
+    color: white;
+  }
+}
+
+.ordenH {
+  display: grid;
+  grid-template-areas:
+    "cabezaH ptsH gfsH gcsH dfH"
+    "clasi1H pts1H gf1H gc1H df1H"
+    "clasi2H pts2H gf2H gc2H df2H"
+    "terH pts3H gf3H gc3H df3H"
+    "cuarH pts4H gf4H gc4H df4H";
+  grid-template-columns: 1fr repeat(4, 0.5fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.rowDeOctavos {
+  border: solid $color-qatar;
+  padding: 10px;
+}
+
+.copaDelMundo {
+  height: 30vh;
+  -webkit-animation: vibrate-1 0.2s linear infinite both;
+  animation: vibrate-1 0.2s linear infinite both;
+
+  @-webkit-keyframes vibrate-1 {
+    0% {
+      -webkit-transform: translate(0);
+      transform: translate(0);
+    }
+    20% {
+      -webkit-transform: translate(-2px, 2px);
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      -webkit-transform: translate(-2px, -2px);
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      -webkit-transform: translate(2px, 2px);
+      transform: translate(2px, 2px);
+    }
+    80% {
+      -webkit-transform: translate(2px, -2px);
+      transform: translate(2px, -2px);
+    }
+    100% {
+      -webkit-transform: translate(0);
+      transform: translate(0);
+    }
+  }
+  @keyframes vibrate-1 {
+    0% {
+      -webkit-transform: translate(0);
+      transform: translate(0);
+    }
+    20% {
+      -webkit-transform: translate(-2px, 2px);
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      -webkit-transform: translate(-2px, -2px);
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      -webkit-transform: translate(2px, 2px);
+      transform: translate(2px, 2px);
+    }
+    80% {
+      -webkit-transform: translate(2px, -2px);
+      transform: translate(2px, -2px);
+    }
+    100% {
+      -webkit-transform: translate(0);
+      transform: translate(0);
+    }
+  }
+}
+
+.resultados {
+  font-family: $font-bold;
+
+  &__perdedores {
+    background-color: $color-qatar;
+    color: white;
+  }
+
+  &__ganador {
+    color: $color-qatar;
+  }
+}
+
+.ultimaImagen {
+  height: 60vh;
+}
+
+.linkCargaData {
+  text-decoration: none;
+  color: $color-qatar;
+  padding: 15px;
+}
+
+.filabotones {
+  padding: 15px;
+}
+
+.copaDelCampeon {
+  padding: 50px;
+
+  -webkit-animation: blink-1 5s infinite both;
+  animation: blink-1 5s infinite both;
+
+  @-webkit-keyframes blink-1 {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+    25%,
+    75% {
+      opacity: 0;
+    }
+  }
+  @keyframes blink-1 {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+    25%,
+    75% {
+      opacity: 0;
+    }
+  }
+}

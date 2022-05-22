@@ -1,0 +1,75 @@
+@import "./responsive";
+@import "./variables";
+
+.estadistica {
+  &__hero {
+    background-image: url("../assets/img/estHero.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    height: 40vh;
+  }
+
+  &__titulo {
+    font-family: $font-bold;
+    color: $color-qatar;
+
+    &--t {
+      font-size: 3rem;
+    }
+
+    &--s {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.escudo {
+  width: 50%;
+  padding: 20px;
+}
+
+.plantel {
+  width: 80%;
+  padding: 20px;
+  border-radius: 35px 35px 35px 35px !important;
+}
+
+.resultados {
+  font-family: $font-bold;
+
+  &__1 {
+    background-color: $color-qatar;
+    color: white;
+  }
+
+  &__2 {
+    color: $color-qatar;
+  }
+
+  &__3 {
+    background-color: $color-qatar;
+    color: white;
+  }
+
+  &__4 {
+    color: $color-qatar;
+  }
+
+  &__5 {
+    background-color: $color-qatar;
+    color: white;
+  }
+
+  &__minititulo {
+    font-size: 3rem;
+  }
+
+  &__est {
+    font-size: 2rem;
+  }
+}
+
+.imgPo {
+  width: 100%;
+}
