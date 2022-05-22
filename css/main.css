@@ -172,7 +172,7 @@
 }
 
 .heroe {
-  background-image: url("../assets/img/hero.jpg");
+  background-image: url("../assets/img/campo.jpg");
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
@@ -573,7 +573,7 @@
 }
 
 .heroealternativo {
-  background-image: url("../assets/img/heropronosticonormal.jpg");
+  background-image: url("../assets/img/copa.jpg");
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -774,4 +774,20 @@ h2 {
 
 .escudoSemi {
   height: 20vh;
+}
+
+footer .copyright {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 21px;
+  font-weight: lighter;
+  background-color: #000000;
+}
+
+footer h5 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 10px;
+  text-align: center;
+  color: #74f50b;
+  font-size: 15px;
+  font-weight: bold;
 }
